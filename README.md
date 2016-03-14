@@ -1,6 +1,7 @@
-# <img src="../master/www/images/Capture.PNG" width="50%" height="50%"/> LiveboxRemote
+# LiveboxRemote
+<img src="../master/www/images/Capture.PNG" width="30%" height="30%"/>
 
-### Manage your Livebox (by Orange) with SARAH
+### Manage your Livebox (by Orange) with SARAH.
 
 ***
 
