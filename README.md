@@ -1,5 +1,5 @@
 # LiveboxRemote
-<img src="../master/www/images/Capture.PNG" width="30%" height="30%"/>
+<img src="../master/www/images/Capture.PNG" width="25%" height="25%"/>
 
 ### Manage your Livebox (by Orange) with SARAH.
 
