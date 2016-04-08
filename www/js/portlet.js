@@ -43,7 +43,7 @@
         var lbPost = 'http://127.0.0.1:8080/sarah/LiveboxRemote/?cmd='+ $(this).text().trim();
         if ($(this).text().trim() == 'Shutdown')
           lbPost = lbPost + '&stby=' + (1-stby);
-        $.post('http://127.0.0.1:8080/sarah/LiveboxRemote/?cmd='+ $(this).text().trim());
+        $.post(lbPost);
       }
     });
   }

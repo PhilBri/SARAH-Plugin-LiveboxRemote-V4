@@ -24,6 +24,7 @@ exports.socket = function (io, socket) {
 
 exports.action = function (data, next) {
     info('[ LiveboxRemote ] is called ...', data.cmd || data.epg);
+    var tts;
 
     sendLiveBox('getState', cfgLiveBox, function (clbk) {
         lbState = clbk;
@@ -32,12 +33,12 @@ exports.action = function (data, next) {
         else if (data.stby == lbState)
             next({ 'tts': ipCmd.stby[lbState].toString() });
         else {
+            var tts = data.cmd ? 'cmd' : 'epg';
+            var ttsNum = Math.floor( Math.random() * ipCmd[tts].length ); 
+            next ({ tts:ipCmd[tts][ttsNum] });
             sendLiveBox(data, cfgLiveBox, function (clbk) {
-                var tts = data.cmd ? 'cmd' : 'epg';
-                var ttsNum = Math.floor( Math.random() * ipCmd[tts].length ); 
                 lbState = clbk;
                 lbSock.emit('lb-state',lbState);
-                next ({ tts:ipCmd[tts][ttsNum] });
             });
         }
     });
