@@ -1,43 +1,35 @@
-# [S.A.R.A.H.](http://encausse.net/s-a-r-a-h)
+# <img src="../master/www/images/capture.png" width="50%" height="50%"/> LiveboxRemote
 
-This plugin is an add-on for the framework [S.A.R.A.H.](http://encausse.net/s-a-r-a-h), an Home Automation project built 
-on top of:
-* C# (Kinect) client for Voice, Gesture, Face, QRCode recognition. 
-* NodeJS (ExpressJS) server for Internet of Things communication
+### Manage your Livebox (by Orange) with SARAH
 
-## License
+***
 
-```
-            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-                    Version 2, December 2004
-
- Copyright (C) 2012 S.A.R.A.H. <sarah.project@encausse.net>
-
- Everyone is permitted to copy and distribute verbatim or modified
- copies of this license document, and changing it is allowed as long
- as the name is changed.
-
-            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
-
-  0. You just DO WHAT THE FUCK YOU WANT TO.
-```
-
-```
- This program is free software. It comes without any warranty, to
- the extent permitted by applicable law. You can redistribute it
- and/or modify it under the terms of the Do What The Fuck You Want
- To Public License, Version 2, as published by S.A.R.A.H. See
- http://www.wtfpl.net/ for more details.
-```
+This plugin is an add-on for the framework [S.A.R.A.H.](http://encausse.net/s-a-r-a-h) an Home Automation project.
+* [Description](#description)
+* [Installation](#install)
+* [Important](#important)
 
 
+***
+<a name="description"></a>
 ## Description
 
-A plugin to play with liveboxremote
+Retrouvez votre télécommande *Livebox* dans l'écran de SARAH.
 
+Utilisez les touches ou commandez l'ensemble par la voix...
 
-## Quick Start
+***
 
-Donwload the plugin from SARAH's marketplace and follow online plugin's documentation  
-   
+<a name="install"></a>
+## Installation
+
+Use S.A.R.A.H. online **MarketPlace**, or download files from here and then, copy them into `..\SARAH\plugins\MQTTHub` directory.
+
+***
+
+<a name="important"></a>
+## Important notes
+
+**Compatible versions:** 
+
+- This plugin was designed for **S.A.R.A.H** v4 only !...
