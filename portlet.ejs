@@ -1,0 +1,60 @@
+<% sidebar = SARAH.PortalManager.SIDEBAR %>
+<% layout('/layout/layout.ejs') -%>
+<% script('/liveboxremote/www/js/portlet.js'); %>
+<% stylesheet('/liveboxremote/www/less/liveboxremote.css'); %>
+
+<!-- Title -->
+<div class="LiveboxRemote-title portlet-handle">
+	<div class="title-text"><a href="#" id="btnTitle"><%- plugin.name -%></a></div>
+</div>
+<!-- Digits -->
+<div class="container-fluid num-pad">
+	<div class="col-xs-4 lbox"><a id="513:0">1</a></div>
+	<div class="col-xs-4 lbox"><a id="514:0">2</a></div>
+	<div class="col-xs-4 lbox"><a id="515:0">3</a></div>
+	<div class="col-xs-4 lbox"><a id="516:0">4</a></div>
+	<div class="col-xs-4 lbox"><a id="517:0">5</a></div>
+	<div class="col-xs-4 lbox"><a id="518:0">6</a></div>
+	<div class="col-xs-4 lbox"><a id="519:0">7</a></div>
+	<div class="col-xs-4 lbox"><a id="520:0">8</a></div>
+	<div class="col-xs-4 lbox"><a id="521:0">9</a></div>
+	<div class="col-xs-4"></div>
+	<div class="col-xs-4 lbox"><a id="512:0">0</a></div>
+</div>
+<!-- Navigation -->
+<div class="container-fluid nav-pad">
+	<!-- Home - Up - Return -->
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Home.svg"/></div>
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Chevron-Up.svg"/></div>
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Exit.svg"/></div>
+	<!-- Left - - Right -->
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Chevron-Left.svg"/></div>
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Ok.svg"/></div>
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Chevron-Right.svg"/></div>
+	<!-- VOD - Down - OK -->
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/VOD.svg"/></div>
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Chevron-Down.svg"/></div>
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Info.svg"/></div>
+</div>
+<!-- VOD -->
+<div class="container-fluid vod-pad">
+	<!-- REW - Play/Pause - FF -->
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Rewind.svg"/></div>
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Play.svg"/></div>
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Fast-Forward.svg"/></div>
+	<!-- Stop - Record -->
+	<div class="col-xs-2"></div>
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Stop.svg"/></div>
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Record.svg"/></div>
+</div>
+<!-- Volume - Channels - Standby -->
+<div class="container-fluid div-pad">
+	<!-- First row -->
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Collapse-Arrow.svg"/></div>
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/High-Volume.svg"/></div>
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Mute.svg"/></div>
+	<!-- Second row -->
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Expand-Arrow.svg"/></div>
+	<div class="col-xs-4 lbox"><img class="svg" src="liveboxremote/www/images/Low-Volume.svg"/></div>
+	<div class="col-xs-4 lbox"><img class="svg shutdown" src="liveboxremote/www/images/Shutdown.svg"/></div>
+</div>

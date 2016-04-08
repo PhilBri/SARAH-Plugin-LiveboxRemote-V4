@@ -1,0 +1,9 @@
+{
+  "modules" : { 
+    "LiveboxRemote"  : {
+      "description": "Livebox TV with SARAH",
+      "version": "4.0",
+      "IP": ""
+    }
+  }
+}
