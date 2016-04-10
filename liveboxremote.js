@@ -40,7 +40,6 @@ exports.action = function (data, next) {
             next ({ tts:ipCmd[tts][ttsNum] });
             sendLiveBox(data, cfgLiveBox, function (clbk) {
                 lbState = clbk;
-                console.log(clbk);
                 lbSock.emit('lb-state', lbState);
             });
         }
