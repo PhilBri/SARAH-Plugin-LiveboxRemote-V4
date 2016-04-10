@@ -15,30 +15,33 @@ exports.init = function () {
 }
 
 exports.socket = function (io, socket) {
-    lbSock = socket;
-    lbSock.emit('lb-connected', function (msg) {
-        info('[ LiveboxRemote ] %s ...', msg);
+    io.of('/lbremote').on('connection', function (socket) {
+        lbSock = socket;
+        info('[ LiveboxRemote ] is connected to portlet ...');//, msg);
         lbSock.emit('lb-state', lbState);
-    });
+    })
 }
 
 exports.action = function (data, next) {
     info('[ LiveboxRemote ] is called ...', data.cmd || data.epg);
-    var tts;
 
     sendLiveBox('getState', cfgLiveBox, function (clbk) {
         lbState = clbk;
-        if (data.cmd && data.confidence && lbState == 1 && data.cmd != 'Shutdown')
+
+        if (data.hasOwnProperty('cmd') && data.hasOwnProperty('confidence') && lbState == 1 && data.cmd != 'Shutdown')
             next({'tts': ipCmd.stby[3].toString()});
-        else if (data.stby == lbState)
+
+        else if (data.stby == lbState && data.hasOwnProperty('confidence'))
             next({ 'tts': ipCmd.stby[lbState].toString() });
+
         else {
             var tts = data.cmd ? 'cmd' : 'epg';
             var ttsNum = Math.floor( Math.random() * ipCmd[tts].length ); 
             next ({ tts:ipCmd[tts][ttsNum] });
             sendLiveBox(data, cfgLiveBox, function (clbk) {
                 lbState = clbk;
-                lbSock.emit('lb-state',lbState);
+                console.log(clbk);
+                lbSock.emit('lb-state', lbState);
             });
         }
     });

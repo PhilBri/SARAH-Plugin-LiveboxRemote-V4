@@ -3,14 +3,11 @@
       stby;
 
   var registerSocketIO = function() {
-    lbSock = io();
-    lbSock.on('lb-connected', function(callback) {
-      $('#btnTitle').css({'color':'orange'});
-      callback('connected to portlet');
-    });
+    lbSock = io('/lbremote');
+    $('#btnTitle').css({'color':'orange'});
     lbSock.on('lb-state', function (msg) {
       stby = msg;
-      if (msg) $('.shutdown').css('fill', msg == 0 ? 'lightgreen' : 'red');
+      if (stby) $('.shutdown').css('fill', stby == 0 ? 'lightgreen' : 'red');
     });
   }
 
