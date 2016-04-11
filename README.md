@@ -27,7 +27,7 @@ Utilisez les touches ou commandez l'ensemble par la voix...
 <a name="install"></a>
 ## Installation
 
-Utilisez le **MarketPlace** en-ligne, ou télécharger directement le plugin depuis cette page et, copiez les fichiers dans le répertoire `..\SARAH\plugins\MQTTHub`
+Utilisez le **MarketPlace** en-ligne, ou télécharger directement le plugin depuis cette page et, copiez les fichiers dans le répertoire `..\SARAH\plugins\LiveboxRemote`
 
 ***
 
