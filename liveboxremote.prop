@@ -3,7 +3,8 @@
     "LiveboxRemote"  : {
       "description": "Livebox TV with SARAH",
       "version": "4.0",
-      "IP": ""
+      "IP": "",
+      "h": "3"
     }
   }
 }
