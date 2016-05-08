@@ -130,17 +130,19 @@
       <item>Affiche</item>
       <item>Zap</item>
     </one-of>
-    <one-of>
-      <item>sur</item>
-      <item>la</item>
-      <item>le</item>
-      <item>sur la</item>
-      <item>sur le</item>
-    </one-of>
     <item repeat="0-1">
-        <one-of>
-          <item>chaine</item>
-          <item>programme</item>
+      <one-of>
+        <item>sur</item>
+        <item>la</item>
+        <item>le</item>
+        <item>sur la</item>
+        <item>sur le</item>
+      </one-of>
+    </item>
+    <item repeat="0-1">
+      <one-of>
+        <item>chaine</item>
+        <item>programme</item>
       </one-of>
     </item>
     <one-of>
