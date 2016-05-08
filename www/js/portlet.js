@@ -1,13 +1,18 @@
 !function ($) {
-  var lbSock = false,
-      stby;
+  var socket = false;
 
   var registerSocketIO = function() {
-    lbSock = io('/lbremote');
+    socket = io();
+
     $('#btnTitle').css({'color':'orange'});
-    lbSock.on('lb-state', function (msg) {
-      stby = msg;
-      if (stby) $('.shutdown').css('fill', stby == 0 ? 'lightgreen' : 'red');
+
+    socket.emit('lb-connect', 'Connected to portlet ...')
+
+    socket.on('lb-state', function (msg) {
+      $('.shutdown').css('fill', msg == 1 ? 'red' : 'lightgreen');
+    })
+    .on('disconnect', function () {
+      $('#btnTitle, .shutdown').css({'color':'#6A5F4D', 'fill': '#6A5F4D'});
     });
   }
 
@@ -37,10 +42,7 @@
 
     $(document).on('click', 'a, .svg', function (event) {
       if ($(this).parents().prop('class')=='col-xs-4 lbox') {
-        var lbPost = 'http://127.0.0.1:8080/sarah/LiveboxRemote/?cmd='+ $(this).text().trim();
-        if ($(this).text().trim() == 'Shutdown')
-          lbPost = lbPost + '&stby=' + (1-stby);
-        $.post(lbPost);
+        $.post('http://127.0.0.1:8080/sarah/LiveboxRemote/?cmd='+$(this).text().trim());
       }
     });
   }
