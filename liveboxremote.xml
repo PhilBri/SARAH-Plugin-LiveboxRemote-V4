@@ -24,10 +24,10 @@
   <rule id="ruleOnOff" scope="public">
     <tag>out.action=new Object();</tag>
     <one-of>
-      <item>allume<tag>out.action.cmd="Shutdown";</tag></item>
-      <item>met<tag>out.action.cmd="Shutdown";</tag></item>
-      <item>éteint<tag>out.action.cmd="Shutdown";</tag></item>
-      <item>coupe<tag>out.action.cmd="Shutdown";</tag></item>
+      <item>allume<tag>out.action.stby='0';out.action.cmd="Shutdown";</tag></item>
+      <item>met<tag>out.action.stby='0';out.action.cmd="Shutdown";</tag></item>
+      <item>éteint<tag>out.action.stby='1';out.action.cmd="Shutdown";</tag></item>
+      <item>coupe<tag>out.action.stby='1';out.action.cmd="Shutdown";</tag></item>
     </one-of>
     <item><ruleref uri="#ruleName"/></item>
     <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/LiveboxRemote";</tag>

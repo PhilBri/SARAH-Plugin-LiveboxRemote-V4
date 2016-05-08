@@ -8,8 +8,7 @@ exports.init = function () {
     info ('[ LiveboxRemote ] is initializing... (v%s)', cfgLiveBox.version);
     var ipReg = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/gm;
 
-    if (!ipReg.test (cfgLiveBox.IP))
-        return error ('\033[91m[ LiveboxRemote ]\033[0m Invalid IP: %s ! ...', cfgLiveBox.IP);
+    if (!ipReg.test (cfgLiveBox.IP)) return error ('\033[91m[ LiveboxRemote ]\033[0m Invalid IP: %s ! ...', cfgLiveBox.IP);
 
     sendLiveBox ('getState', cfgLiveBox, function (clbk) {
         lbState = clbk;
@@ -34,8 +33,14 @@ exports.action = function (data, next) {
     sendLiveBox ('getState', cfgLiveBox, function (clbk) {
         lbState = clbk;
 
-        if (data.hasOwnProperty ('cmd') && data.hasOwnProperty ('confidence') && lbState == 1 && data.cmd != 'Shutdown')
+        if (data.hasOwnProperty ('cmd') && data.hasOwnProperty ('confidence') && lbState == 1 && data.cmd != 'Shutdown') {
             next ({ 'tts': ipCmd.stby[3].toString() });
+        }
+
+        else if (data.stby == lbState && data.hasOwnProperty ('confidence')) {
+            next ({ 'tts': ipCmd.stby[lbState].toString() });
+        }
+
         else {
             var tts = data.cmd ? 'cmd' : 'epg';
             var ttsNum = Math.floor ( Math.random() * ipCmd[tts].length ); 
