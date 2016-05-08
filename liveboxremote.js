@@ -37,10 +37,6 @@ exports.action = function (data, next) {
             next ({ 'tts': ipCmd.stby[3].toString() });
         }
 
-        else if (data.stby == lbState && data.hasOwnProperty ('confidence')) {
-            next ({ 'tts': ipCmd.stby[lbState].toString() });
-        }
-
         else {
             var tts = data.cmd ? 'cmd' : 'epg';
             var ttsNum = Math.floor ( Math.random() * ipCmd[tts].length ); 
